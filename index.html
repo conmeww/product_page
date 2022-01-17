@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Тестовое</title>
+  </head>
+  <body>
+    <!-- header -->
+
+    <header id="header" role="heading" class="header nav-down">
+      <nav class="nav">
+        <h1 class="logo"><a href="#">LOGO</a></h1>
+        <div class="header__icons">
+          <a href="#"><img src="/img/icons/person.svg" alt="person" /></a>
+          <a href="#"><img src="/img/icons/favorite.svg" alt="bag" /></a>
+          <a href="#"><img src="/img/icons/bag.svg" alt="bag" /></a>
+        </div>
+        <ul>
+          <li><a href="#">постельное белье</a></li>
+
+          <li><a href="#">одежда для дома</a></li>
+
+          <li><a href="#">Одежда для улицы</a></li>
+
+          <li><a href="#">Выход</a></li>
+        </ul>
+
+        <div class="nav__icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <!--main -->
+    <div class="main">
+      <div class="product">
+        <div class="product-gallery">
+          <div class="product-image">
+            <img class="active" src="img/14896420-2 1.png" />
+          </div>
+          <ul class="image-list">
+            <li class="image-item">
+              <img class="active-img" src="img/14896420-2 1.png" />
+            </li>
+            <li class="image-item">
+              <img src="img/14896420-1 1.png" />
+            </li>
+            <li class="image-item">
+              <img src="img/14896420-3 1.png" />
+            </li>
+            <li class="image-item">
+              <img src="img/14896420-4 1.png" />
+            </li>
+            <li class="image-item">
+              <img src="img/14896420-5 1.png" />
+            </li>
+          </ul>
+        </div>
+        <div class="product__details">
+          <div class="product__details--main">
+            <h2>Пижама для девочек</h2>
+            <p class="articul">Арт. 02765/46</p>
+            <div class="reviews">
+              <span>Отзывы</span
+              ><span class="stars">
+                <img src="./img/icons/star_bold.svg" alt="star" />
+                <img src="./img/icons/star_bold.svg" alt="star" />
+                <img src="./img/icons/star_bold.svg" alt="star" />
+                <img src="./img/icons/star_bold.svg" alt="star" />
+                <img src="./img/icons/star_line.svg" alt="star" /></span
+              ><span>14 отзывов</span>
+              <a href="#"><img src="./img/icons/arrow_right.svg" alt="" /></a>
+            </div>
+            <div class="price">
+              <p>800 ₽</p>
+              <span>1 500 ₽</span>
+              <a href="#"><img src="./img/icons/arrow_right.svg" alt="" /></a>
+            </div>
+            <div class="discounts">
+              <span>скидка -36%</span>
+              <span>акция -20%</span>
+            </div>
+            <select class="select">
+              <option>Выбрать размер</option>
+              <option>XS</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <a href="#" class="btn--link">Определить размер</a>
+            <div class="add-to-cart">
+              <div class="number">
+                <span class="minus">-</span>
+                <input type="text" value="1" id="prod-value" />
+                <span class="plus">+</span>
+              </div>
+
+              <button class="btn btn--dark" id="add-to-cart">
+                Добавить в корзину
+              </button>
+
+              <a id="add-to-fav" href="#" class="btn btn--dark btn--favorite"
+                ><img
+                  src="./img/icons/favorite_white.svg"
+                  alt="add to favorite"
+              /></a>
+            </div>
+            <a href="#" class="btn--link">Купить в 1 клик</a>
+          </div>
+          <ul class="product__details--sub">
+            <li>
+              <img src="/img/icons/product.svg" alt="product" /><a
+                href="#"
+                class="btn--link"
+                >Описание товара</a
+              >
+            </li>
+            <li>
+              <img src="/img/icons/clock.svg" alt="clock" /><a
+                href="#"
+                class="btn--link"
+                >Доставка и возврат</a
+              >
+            </li>
+            <li>
+              <img src="/img/icons/card.svg" alt="card" /><a
+                href="#"
+                class="btn--link"
+                >Способы оплаты</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- modal window-->
+
+      <div class="mask" role="dialog"></div>
+      <div class="modal" role="alert">
+        <button class="close" id="close" role="button">
+          <img src="/img/close.png" alt="" />
+        </button>
+        <div class="success-checkmark">
+          <div class="check-icon">
+            <span class="icon-line line-tip"></span>
+            <span class="icon-line line-long"></span>
+            <div class="icon-circle"></div>
+            <div class="icon-fix"></div>
+          </div>
+        </div>
+
+        <h2>Добавлено в Вашу корзину!</h2>
+        <br />
+        <span>Товар в количестве </span>
+        <p id="count"></p>
+        <span> единиц добавлен в корзину</span>
+      </div>
+      <!--added to favorite modal window-->
+      <div class="mask-2" role="dialog"></div>
+      <div class="modal modal-2" role="alert">
+        <button class="close" id="close-2" role="button">
+          <img src="/img/close.png" alt="" />
+        </button>
+
+        <img class="fav_modal" src="/img/icons/favorite.svg" alt="favorite" />
+        <h2>Товар добавлен в избранное!</h2>
+      </div>
+
+      <a href="#" class="btn--link btn--show-more">Посмотреть все стили</a>
+      <div class="promo-gallery">
+        <div class="promo-gallery__img-box promo-gallery__img-box--1">
+          <img
+            src="/img/promo_gal_1.png"
+            alt="promo image"
+            class="gallery-img gallery-img--1"
+          />
+          <div class="overlay">
+            <div class="overlay__content">
+              <a href="" class="overlay__full-img"
+                ><img
+                  src="/img/icons/full_screen.svg
+    "
+                  alt="full screen img"
+              /></a>
+              <div class="overlay__details">
+                <img src="/img/icons/bag_white.svg" alt="bag" />
+                <a href="#">Узнай, что на мне</a>
+              </div>
+
+              <div class="overlay__favorite">
+                <img
+                  src="/img/icons/favorite_white_fill.svg"
+                  alt="add to favorite"
+                />
+                <span>200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-gallery__img-box promo-gallery__img-box--2">
+          <img
+            src="/img/promo_gal_2.png"
+            alt="promo image"
+            class="gallery-img gallery-img--2"
+          />
+          <div class="overlay">
+            <div class="overlay__content">
+              <a href="" class="overlay__full-img"
+                ><img
+                  src="/img/icons/full_screen.svg
+    "
+                  alt="full screen img"
+              /></a>
+              <div class="overlay__details">
+                <img src="/img/icons/bag_white.svg" alt="bag" />
+                <a href="#">Узнай, что на мне</a>
+              </div>
+
+              <div class="overlay__favorite">
+                <img
+                  src="/img/icons/favorite_white_fill.svg"
+                  alt="add to favorite"
+                />
+                <span>200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="promo-gallery__img-box promo-gallery__img-box--3">
+          <img
+            src="/img/promo_gal_3.png"
+            alt="promo image"
+            class="gallery-img gallery-img--3"
+          />
+          <div class="overlay">
+            <div class="overlay__content">
+              <a href="" class="overlay__full-img"
+                ><img
+                  src="/img/icons/full_screen.svg
+    "
+                  alt="full screen img"
+              /></a>
+              <div class="overlay__details">
+                <img src="/img/icons/bag_white.svg" alt="bag" />
+                <a href="#">Узнай, что на мне</a>
+              </div>
+
+              <div class="overlay__favorite">
+                <img
+                  src="/img/icons/favorite_white_fill.svg"
+                  alt="add to favorite"
+                />
+                <span>200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="promo-gallery__img-box promo-gallery__img-box--4">
+          <img
+            src="/img/promo_gal_4.png"
+            alt="promo image"
+            class="gallery-img gallery-img--4"
+          />
+          <div class="overlay">
+            <div class="overlay__content">
+              <a href="" class="overlay__full-img"
+                ><img
+                  src="/img/icons/full_screen.svg
+    "
+                  alt="full screen img"
+              /></a>
+              <div class="overlay__details">
+                <img src="/img/icons/bag_white.svg" alt="bag" />
+                <a href="#">Узнай, что на мне</a>
+              </div>
+
+              <div class="overlay__favorite">
+                <img
+                  src="/img/icons/favorite_white_fill.svg"
+                  alt="add to favorite"
+                />
+                <span>200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="promo-gallery__img-box promo-gallery__img-box--5">
+          <img
+            src="/img/promo_gal_5.png"
+            alt="promo image"
+            class="gallery-img gallery-img--5"
+          />
+          <div class="overlay">
+            <div class="overlay__content">
+              <a href="" class="overlay__full-img"
+                ><img
+                  src="/img/icons/full_screen.svg
+    "
+                  alt="full screen img"
+              /></a>
+              <div class="overlay__details">
+                <img src="/img/icons/bag_white.svg" alt="bag" />
+                <a href="#">Узнай, что на мне</a>
+              </div>
+
+              <div class="overlay__favorite">
+                <img
+                  src="/img/icons/favorite_white_fill.svg"
+                  alt="add to favorite"
+                />
+                <span>200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__col--1">
+          <h4>покупателям</h4>
+          <ul>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Акции</a></li>
+            <li><a href="#">Бренды</a></li>
+          </ul>
+        </div>
+        <div class="footer__col--2">
+          <h4>о нас</h4>
+          <ul>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Команда</a></li>
+          </ul>
+        </div>
+        <div class="footer__col--3">
+          <h4>Узнайте первыми о новинках и акциях</h4>
+          <p id="message"></p>
+          <input
+            name="email"
+            placeholder="Адрес электронной почты"
+            id="email"
+          />
+          <button id="validate">Подписаться</button>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
